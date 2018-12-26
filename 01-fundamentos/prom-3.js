@@ -54,6 +54,6 @@ let sumarRapido = (numero) => {
 console.log("Promise.race");
 Promise.race([sumarLento(5), sumarRapido(10)])
     .then(respuesta => {
-        console.log(respuesta); // Imprime array [6, 11]
+        console.log(respuesta); // Imprime 11 
     })
-    .catch(console.log);
+    .catch(console.log); // Cuando una de las promesas da error, se cancela todo el proceso, si la del error termima más rápido
