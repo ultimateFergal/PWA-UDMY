@@ -1,0 +1,22 @@
+// Petición POST
+// https://reqres.in/api/users
+
+let usuario = {
+    nombre: 'Fernando',
+    edad: 32
+};
+
+fetch( 'https://reqres.in/api/users', {
+    method: 'POST', // PUT
+    BODY: JSON.stringify( usuario ), // data
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+.then( resp => resp.json() )
+.then( console.log )
+.catch (error => {
+    console.log('Error en la aplicación');
+    console.log(error);
+});
+// .catch(console.error);
