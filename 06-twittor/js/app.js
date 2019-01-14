@@ -1,5 +1,5 @@
 var url = window.location.href;
-var swLocation = 'PWA-UDMY/twittor/06-twittor/sw.js'; // está bien para desarrollo pero no para producción
+var swLocation = 'PWA-UDMY/06-twittor/sw.js'; // está bien para desarrollo pero no para producción
 
 
 
