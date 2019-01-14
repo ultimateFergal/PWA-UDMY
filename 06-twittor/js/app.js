@@ -6,9 +6,9 @@ var swLocation = '/twittor/06-twittor/sw.js'; // está bien para desarrollo pero
 if (navigator.serviceWorker) {
 
     if (url.includes('localhost')) {
-        swLocation = '/sw.js'; // para cuando se trabaje en desarrollo
+        swLocation = '/06-twittor/sw.js'; // para cuando se trabaje en desarrollo
     }
-    navigator.serviceWorker.register('swLocation');
+    navigator.serviceWorker.register(swLocation);
 }
 
 
