@@ -1,6 +1,14 @@
+var url = window.location.href;
+var swLocation = '/twittor/06-twittor/sw.js'; // está bien para desarrollo pero no para producción
+
+
 
 if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('/sw.js');
+
+    if (url.includes('localhost')) {
+        swLocation = '/sw.js'; // para cuando se trabaje en desarrollo
+    }
+    navigator.serviceWorker.register('swLocation');
 }
 
 
