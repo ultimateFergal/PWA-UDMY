@@ -1,5 +1,6 @@
 
 // Guardar en el cache dinámico
+
 function actualizaCacheDinamico(dynamicCache, req, res) {
 
     if ( res.ok ) {

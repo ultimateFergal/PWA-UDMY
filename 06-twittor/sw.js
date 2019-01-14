@@ -1,13 +1,12 @@
 // imports
 importScripts('js/sw-utils.js');
 
-
-const STATIC_CACHE    = 'static-v2';
-const DYNAMIC_CACHE   = 'dynamic-v1';
+const STATIC_CACHE = 'static-v2';
+const DYNAMIC_CACHE = 'dynamic-v1';
 const INMUTABLE_CACHE = 'inmutable-v1';
 
 const APP_SHELL       = [
-    // '/', // No va a servir en producción
+    '/', //Petición slash también es necesaria guardarla// No va a servir en producción
     'index.html',
     'css/style.css',
     'img/favicon.ico',
@@ -20,6 +19,7 @@ const APP_SHELL       = [
     'js/sw-utils.js'
 ];
 
+// Todo lo que no se va a moficicar jamás
 const APP_SHELL_INMUTABLE = [
     'https://fonts.googleapis.com/css?family=Quicksand:300,400',
     'https://fonts.googleapis.com/css?family=Lato:400,300',
@@ -27,6 +27,7 @@ const APP_SHELL_INMUTABLE = [
     'css/animate.css',
     'js/libs/jquery.js'
 ];
+
 
 self.addEventListener('install', e => {
 
@@ -57,6 +58,7 @@ self.addEventListener('activate', e => {
     e.waitUntil( respuesta );
 });
 
+
 self.addEventListener( 'fetch', e => {
     const respuesta = caches.match(e.request).then(res => {   
         if (res) {
@@ -65,7 +67,7 @@ self.addEventListener( 'fetch', e => {
             // console.log(e.request.url);
             return fetch(e.request).then( newRes => {
 
-                return actualizaCacheDinamico( DYNAMIC_CACHE, e.returnValue, newRes)
+                return actualizaCacheDinamico( DYNAMIC_CACHE, e.request, newRes)
             });
         }
 
