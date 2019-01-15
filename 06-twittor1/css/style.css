@@ -11,14 +11,6 @@
     font-size: 16px;
     background-color: #dde1e2; 
     width: 100%;
-
-    /*Para que no aparezca pull to refresh ni call outs*/
-    overscroll-behavior-y: contain;
-
-    /*Para que no haga selecciones ni highlight*/  
-    -webkit-user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
 }
 
 /* Personalizados */
